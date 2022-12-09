@@ -29,13 +29,13 @@ class GildedRose(object):
 
         # disminuir la calidad
         if item.quality > self.min_quality:
-            item.quality = item.quality - 1
+            item.quality -= 1
             # si han pasado los días de venta, disminuya la calidad dos veces
             if item.sell_in <= 0:
-                item.quality = item.quality - 1
+                item.quality -= 1
 
         # disminuir sell_in días
-        item.sell_in = item.sell_in - 1
+        item.sell_in -= 1
 
     # actualizacion de 'Aged Brie'
     def update_aged_brie(self, item):
@@ -45,10 +45,10 @@ class GildedRose(object):
             item.quality = item.quality + 1
             # si han pasado los días de venta, disminuye la calidad dos veces 
             if item.sell_in <= 0:
-                item.quality = item.quality + 1
+                item.quality += 1
 
         # disminuir sell_in días
-        item.sell_in = item.sell_in - 1
+        item.sell_in -= 1
 
     # actualizar 'Sulfuras' - Legendary item
     def update_sulfuras(self, item):
@@ -59,32 +59,32 @@ class GildedRose(object):
 
         # aumentar la calidad
         if 10 >= item.sell_in > 5:
-            item.quality = item.quality + 2
+            item.quality += 2
         elif 5 >= item.sell_in > 0:
-            item.quality = item.quality + 3
+            item.quality += 3
         elif item.sell_in <= 0:
             item.quality = 0
         else:
-            item.quality = item.quality + 1
+            item.quality += 1
 
         if item.quality > self.max_quality:
             item.quality = self.max_quality
 
         # disminuir sell_in días
-        item.sell_in = item.sell_in - 1
+        item.sell_in -= 1
 
     # actualizar 'Conjured' - nuevo elemento que se agregará
     def update_conjured(self, item):
 
         # decrease quality
         if item.quality > self.min_quality:
-            item.quality = item.quality - 2
+            item.quality -= 2
             # si han pasado los días de venta, disminuya la calidad dos veces
             if item.sell_in <= 0:
-                item.quality = item.quality - 2
+                item.quality -= 2
 
         if item.quality < self.min_quality:
             item.quality = self.min_quality
 
        # disminuir sell_in días
-        item.sell_in = item.sell_in - 1
+        item.sell_in -= 1
