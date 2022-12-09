@@ -76,7 +76,7 @@ class GildedRose(object):
     # actualizar 'Conjured' - nuevo elemento que se agregará
     def update_conjured(self, item):
 
-        # decrease quality
+        # disminuir la calidad
         if item.quality > self.min_quality:
             item.quality -= 2
             # si han pasado los días de venta, disminuya la calidad dos veces
